@@ -21,10 +21,10 @@ async def start(client, message):
     ])
 
     start_message = (
-        f"<b>⚡ Hᴇʏ, {mention} ~!</b>\n\n"
+        f"<b>⚡ Hᴇʏ, {mention} ~!\n\n"
         "<blockquote>"
         "I ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇ ᴢɪᴘ ᴏᴘᴇɴᴇʀ ʙᴏᴛ. Jᴜsᴛ sᴇɴᴅ ᴍᴇ ᴀ ᴢɪᴘ ᴀɴᴅ ɪ ᴡɪʟʟ ᴇxᴛʀᴀᴄᴛ ɪᴛ ғᴏʀ ʏᴏᴜ.\n"
-        "» ᴍᴀᴅᴇ ʙʏ <a href='https://t.me/ProError'>@ProError</a>"
+        "» ᴍᴀᴅᴇ ʙʏ <a href='https://t.me/ProError'>@ProError</a></b>"
         "</blockquote>"
     )
 
