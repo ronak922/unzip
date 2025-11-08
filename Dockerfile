@@ -1,14 +1,14 @@
 FROM python:3.10-slim
 
-# Install required system dependencies (7z, rar, unzip)
+# Install system dependencies (7z, unzip, etc.)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    p7zip-full p7zip-rar unrar unzip && \
+    7zip unzip unar && \
     rm -rf /var/lib/apt/lists/*
 
-# Set working directory
+# Set work directory
 WORKDIR /app
 
-# Copy all project files
+# Copy project files
 COPY . /app
 
 # Install Python dependencies
