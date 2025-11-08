@@ -4,4 +4,11 @@ services:
   unzipbot:
     build: .
     container_name: unzipbot
-    restart: unless-stopped
+    restart: always
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - API_ID=${API_ID}
+      - API_HASH=${API_HASH}
+    volumes:
+      - .:/app
+    command: python main.py

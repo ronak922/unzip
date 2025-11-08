@@ -1,14 +1,19 @@
 FROM python:3.10-slim
 
-WORKDIR /app
-
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    unrar-free p7zip-full p7zip-rar unzip && \
+    unrar-free p7zip-full unzip && \
     rm -rf /var/lib/apt/lists/*
 
+# Set work directory
+WORKDIR /app
+
+# Copy project files
 COPY . /app
 
+# Install Python dependencies
 RUN pip install --no-cache-dir \
-    pyrofork tgcrypto pymongo pyunpack patool gunicorn==20.1.0
+    tgcrypto pyrofork pymongo pyunpack patool gunicorn
 
-CMD ["python3", "-m", "Unzip.main"]
+# Start the bot
+CMD ["python", "main.py"]
