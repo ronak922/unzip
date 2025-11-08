@@ -1,8 +1,8 @@
 FROM python:3.10-slim
 
-# Install system dependencies (7z, unzip, etc.)
+# Install all archive tools that patool supports
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    7zip unzip unar && \
+    p7zip-full p7zip p7zip-plugins unar unzip rar unrar-free file && \
     rm -rf /var/lib/apt/lists/*
 
 # Set work directory
