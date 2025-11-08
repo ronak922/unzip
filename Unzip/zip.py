@@ -9,11 +9,11 @@ from pyunpack import Archive
 from Unzip.progress import progress_for_pyrogram
 from pyrogram.types import InputMediaPhoto, InputMediaVideo
 from pyrogram.enums import ParseMode
-from config import OWNER_ID
+
 
 # Supported archive formats
 SUPPORTED_FORMATS = ('.zip', '.rar', '.7z', '.tar', '.tar.gz', '.tgz', '.tar.bz2')
-
+OWNER_ID = int(os.environ.get("OWNER_ID", "7819896156"))
 
 
 MAX_MEDIA_GROUP = 10
