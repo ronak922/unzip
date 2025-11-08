@@ -13,7 +13,7 @@ COPY . /app
 
 # Install Python dependencies (including uvloop)
 RUN pip install --no-cache-dir \
-    tgcrypto pyrofork pymongo pyunpack patool gunicorn uvloop
+    tgcrypto pyrofork pymongo pyunpack patool gunicorn uvloop aiofiles
 
 # Start the bot
 CMD ["python", "bot.py"]
