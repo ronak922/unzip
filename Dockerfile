@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir \
     tgcrypto pyrofork pymongo pyunpack patool gunicorn
 
 # Start the bot
-CMD ["python", "main.py"]
+CMD ["python", "bot.py"]
