@@ -4,7 +4,7 @@
 
 # My Telegram Channel :- @ProError
 
-# Support Group :- @NT_BOTS_SUPPORT
+# Support Group :- @ProError
 
 # My Youtube Channel :- https://youtube.com/@ntbot?si=TJaNuy4e1HqWirqQ
 
