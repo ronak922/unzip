@@ -5,10 +5,6 @@ services:
     build: .
     container_name: unzipbot
     restart: always
-    environment:
-      - BOT_TOKEN=${BOT_TOKEN}
-      - API_ID=${API_ID}
-      - API_HASH=${API_HASH}
     volumes:
       - .:/app
     command: python bot.py
